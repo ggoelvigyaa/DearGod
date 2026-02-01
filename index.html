@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brainstorm Navigator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Brainstorm Navigator</p>
+        <h1>Guide teams from objective to structured brainstorming.</h1>
+        <p class="subtitle">
+          Capture the end goal, uncover the business model through Q&amp;As, summarize market dynamics, and
+          translate challenges into action-ready brainstorming prompts.
+        </p>
+      </div>
+      <div class="hero-card">
+        <h2>Session overview</h2>
+        <ul>
+          <li>Objective</li>
+          <li>Business model Q&amp;A</li>
+          <li>Market dynamics (auto sourced)</li>
+          <li>Business status layers</li>
+          <li>Challenges &amp; expansion</li>
+          <li>Slides + chat facilitation</li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>1. End Objective</h2>
+        <p>Define the outcome leadership wants to achieve.</p>
+        <textarea id="objective" rows="3" placeholder="Example: Launch a mid-market subscription within 6 months."></textarea>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>2. Business Model Q&amp;A</h2>
+            <p>Answer guided prompts to help the system understand the business model.</p>
+          </div>
+          <button id="add-question" class="ghost">Add Q&amp;A</button>
+        </div>
+        <div id="qa-list" class="qa-list"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>3. Market Dynamics (auto sourced)</h2>
+            <p>Pull in public signals about the market landscape.</p>
+          </div>
+          <button id="fetch-market" class="ghost">Fetch market insights</button>
+        </div>
+        <div id="market-results" class="card-grid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>4. Business Status Layers</h2>
+            <p>Capture public-facing indicators such as funding, customer sentiment, and hiring signals.</p>
+          </div>
+          <button id="add-status" class="ghost">Add status layer</button>
+        </div>
+        <div id="status-list" class="status-list"></div>
+      </section>
+
+      <section class="panel">
+        <h2>5. Visible Challenges</h2>
+        <p>List challenges and expand on them with context from leadership.</p>
+        <textarea id="challenges" rows="4" placeholder="Example: Customer churn in SMB segment; slow enterprise sales cycles."></textarea>
+        <div class="expand-box">
+          <label for="challenge-notes">Expansion notes from the team</label>
+          <textarea id="challenge-notes" rows="3" placeholder="Add extra context, root causes, or supporting evidence."></textarea>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>6. Brainstorming Facilitation</h2>
+            <p>Generate slides and guide the discussion with a built-in chat.</p>
+          </div>
+          <button id="generate-session" class="primary">Build session</button>
+        </div>
+        <div class="brainstorm-grid">
+          <div class="slides">
+            <h3>Slide Deck</h3>
+            <ol id="slide-list" class="slide-list"></ol>
+          </div>
+          <div class="chat">
+            <h3>Facilitation Chat</h3>
+            <div id="chat-log" class="chat-log"></div>
+            <div class="chat-input">
+              <input id="chat-message" type="text" placeholder="Ask a prompt, e.g. 'What if we changed pricing?'"></input>
+              <button id="send-chat" class="primary">Send</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        This prototype uses public placeholders to simulate auto-researched market and business status layers.
+        Integrate your preferred data sources (news, funding databases, job boards) to automate the insights.
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
