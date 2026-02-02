@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Go Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>Go</h1>
+            <div class="game-info">
+                <div class="player-info black-player">
+                    <span class="stone-indicator black"></span>
+                    <span class="player-label">Black</span>
+                    <span class="captures" id="black-captures">0</span>
+                </div>
+                <div class="turn-indicator" id="turn-indicator">Black's Turn</div>
+                <div class="player-info white-player">
+                    <span class="stone-indicator white"></span>
+                    <span class="player-label">White</span>
+                    <span class="captures" id="white-captures">0</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="game-board-container">
+            <canvas id="game-board"></canvas>
+        </main>
+
+        <footer class="game-controls">
+            <div class="control-row">
+                <button id="pass-btn" class="control-btn">Pass</button>
+                <button id="undo-btn" class="control-btn">Undo</button>
+                <button id="resign-btn" class="control-btn danger">Resign</button>
+            </div>
+            <div class="control-row">
+                <button id="new-game-btn" class="control-btn primary">New Game</button>
+                <select id="board-size" class="control-select">
+                    <option value="9">9x9</option>
+                    <option value="13">13x13</option>
+                    <option value="19" selected>19x19</option>
+                </select>
+            </div>
+        </footer>
+
+        <!-- Game Over Modal -->
+        <div id="game-over-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="modal-title">Game Over</h2>
+                <p id="modal-message"></p>
+                <div class="modal-scores">
+                    <div class="score-item">
+                        <span class="stone-indicator black"></span>
+                        <span>Black: <span id="black-score">0</span></span>
+                    </div>
+                    <div class="score-item">
+                        <span class="stone-indicator white"></span>
+                        <span>White: <span id="white-score">0</span></span>
+                    </div>
+                </div>
+                <button id="modal-close-btn" class="control-btn primary">New Game</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
